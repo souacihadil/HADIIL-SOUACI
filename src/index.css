@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+:root {
+  --gold-dark: #0096c7;
+  --gold-main: #00b4d8;
+  --gold-light: #90e0ef;
+  --purple: #8B5CF6;
+  --cyan: #00D9FF;
+  --bg-dark: #0A0A0A;
+  --bg-darker: #050505;
+  font-family: 'Montserrat', sans-serif, !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  line-height: 1.6;
+  color: var(--text-color);
+  overflow-x: hidden;
+  background: var(--white);
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .container {
+    max-width: 90%;
+    padding: 0 1.5rem;
+  }
+  
+  .section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .section {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+  
+  .section {
+    padding: 2.5rem 1rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #ffffff;
+    --text-color: #f0f0f0;
+    --light-gray: #1a1a1a;
+    --white: #0a0a0a;
+  }
+  
+  body {
+    background: var(--white);
+    color: var(--text-color);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

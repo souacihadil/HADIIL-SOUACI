@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ═══════════════════════════════
+   SECTION & BASE
+═══════════════════════════════ */
+/* يجعل كل النصوص في الموقع قابلة للتظليل والتحديد مجدداً */
+
+.about-section {
+  min-height: 100vh;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.about-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ═══════════════════════════════
+   LEFT COLUMN (النصوص)
+═══════════════════════════════ */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.about-eyebrow.expanded {
+  color: #4a90d9;
+  font-size: 1.1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8em, 5vw, 4.2em);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.hero-title .accent {
+  color: #00d4ff;
+}
+
+.role-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+.badge-teal { color: #00d4ff; border-color: rgba(0, 212, 255, 0.4); background: rgba(0, 212, 255, 0.08); }
+.badge-purple { color: #a78bfa; border-color: rgba(167, 139, 250, 0.4); background: rgba(167, 139, 250, 0.08); }
+.badge-yellow { color: #ffca28; border-color: rgba(255, 202, 40, 0.4); background: rgba(255, 202, 40, 0.08); }
+
+.bio-text {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #94a3b8;
+  max-width: 600px;
+}
+
+.bio-text .hl { color: #00d4ff; font-weight: 700; }
+
+/* ═══════════════════════════════
+   RIGHT COLUMN (المهارات الملونة)
+═══════════════════════════════ */
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.skills-embed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* الكاردات الملونة داخل إطارات */
+.skill-mini-card {
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px 20px;
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-mini-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease forwards;
+  transition-delay: var(--delay);
+}
+
+/* تأثير الـ Hover الملون */
+.skill-mini-card:hover {
+  transform: translateY(-10px);
+  background: rgba(22, 30, 45, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill-mini-card:nth-child(1):hover { border-color: #00d4ff; }
+.skill-mini-card:nth-child(2):hover { border-color: #a78bfa; }
+.skill-mini-card:nth-child(3):hover { border-color: #ffca28; }
+.skill-mini-card:nth-child(4):hover { border-color: #94a3b8; }
+
+.mini-icon {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.mini-icon.cyan { color: #00d4ff; filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.3)); }
+.mini-icon.purple { color: #a78bfa; filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3)); }
+.mini-icon.yellow { color: #ffca28; filter: drop-shadow(0 0 8px rgba(255, 202, 40, 0.3)); }
+.mini-icon.gray { color: #94a3b8; }
+
+.skill-mini-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.skill-mini-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════
+   BIO QUOTE (العودة للتنسيق الجميل)
+═══════════════════════════════ */
+.bio-quote-right {
+  border-left: 4px solid #00d4ff;
+  padding: 20px;
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 0 20px 20px 0;
+  color: #94a3b8;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 10px;
+  animation: fadeIn 1s ease forwards 0.8s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+═══════════════════════════════ */
+@media (max-width: 1024px) {
+  .about-wrapper { grid-template-columns: 1fr; gap: 50px; }
+  .left-col { align-items: center; text-align: center; }
+  .role-badges { justify-content: center; }
+  .bio-text { margin: 0 auto; }
+}
