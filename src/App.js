@@ -7,7 +7,6 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './pages/Hero/Hero';
 import './App.css';
 import About from './pages/About/About'
-import AboutEngineering from './pages/AboutEngineering/AboutEngineering';
 import Projects from './pages/Projects/Projects';
 import Contact from './pages/Contact/Contact';
 import Services from './pages/Skills/Skills';
